@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>John Cedric Gagaring</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+        <style type="text/css">
+            .gradient {
+                background: rgb(18,18,18);
+                background: linear-gradient(0deg, rgba(18,18,18,1) 20%, rgba(0,0,0,0) 100%);
+            }
+            .fade-in-bg {
+                animation: fade-in-bg 1s both;
+            }
+
+            #hint {
+                opacity: 0;
+                position: absolute;
+                bottom: 10%;
+                width: 100vw;
+                text-align: center;
+                animation: fade-in 0.5s ease 2s both;
+            }
+
+            @keyframes fade-in-bg { 
+                0% { opacity: 0; visibility: hidden; }
+                1% { visibility: visible; }
+                100% { opacity: 1; }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="float-left" style="font-weight:bold">
+                    <a id="toggleMenu"><i class="fa-solid fa-bars"></i></a><a href="./index.html"><span class="desktop-view">JOHN CEDRIC</span><span class="mobile-view">JC</span> GAGARING</a>
+                </div>
+                <div class="float-right desktop-view">
+                    <nav>
+                        <a href="./about.html">ABOUT</a>
+                        <a href="./experience.html">EXPERIENCE</a>
+                        <a href="./works.html">WORKS</a>
+                        <a href="./reflect.html">REFLECT</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="mobileMenu">
+            <div style="height: 64pt"></div>
+            <div style="padding: 0 40pt 0 16pt;">
+                <nav>
+                    <a href="./about.html"><div class="nav-button">ABOUT</div></a>
+                    <a href="./experience.html"><div class="nav-button">EXPERIENCE</div></a>
+                    <a href="./works.html"><div class="nav-button">WORKS</div></a>
+                    <a href="./reflect.html"><div class="nav-button">REFLECT</div></a>
+                </nav>
+            </div>
+        </div>
+        <div class="body-content fade-in" oncontextmenu="return false;">
+            <div class="desktop-view">
+                <div id="section">
+                    <div class="fade-in-bg" style="background: url('./resources/bg-reflect.jpg') fixed center no-repeat; background-size: cover; height: 100vh;">
+                        <div style="background-color: #1212127f; height: inherit;">
+                            <div style="position: absolute; width: 35%; top: 50%; right: 10%; transform: translateY(-50%);">
+                                <div class="from-left" style="text-align: right;">
+                                    <span style="text-transform: uppercase; font-weight: bold; font-size: 48pt">It's all about the journey, not the destination.</span>
+                                    <p>In order to get the best results, instead of focusing on the goal, you should focus on how to actually get to that goal.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gradient" style="position: absolute; bottom: 0; width: 100vw; height: 128pt; z-index: 0;"></div>
+                        <div id="hint" style="z-index: 1"><i class="fa-solid fa-chevron-down"></i>&emsp;Scroll down&emsp;<i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                </div>
+                <div id="section">
+                    <div id="container">
+                        <div style="display: flex">
+                            <div style="flex: 1">
+                                <div style="font-size: 48pt">LEARNINGS</div>
+                            </div>
+                            <div style="flex: 1">
+                                <p>
+                                    If there is one thing that I've learned when I was in my practicum,
+                                    it's that you should be prepared of what is about to come. This is
+                                    just the beginning of the journey, and something that you should
+                                    learn from, and continue to grow as you set yourself further ahead.
+                                </p>
+                                <p>
+                                    College taught a lot of things for me: how to become a better person
+                                    anyone can lean on, to be an individual who manages their resources
+                                    responsibly, and take any constructive criticism, whether it was
+                                    spoken harshly or not, as a way to improve upon yourself and learn
+                                    from the mistakes, because mistakes make us human. That being said,
+                                    however, committing the same mistakes over and over again will
+                                    instead hinder my development, so as a responsible person, I have
+                                    to make sure that those mistakes never happen again.
+                                </p>
+                                <p>
+                                    I always believed that experience is the best teacher. Someone can
+                                    only teach you so much about the real world, because at the end of
+                                    the day, only you can determine how you can contribute to the
+                                    betterment of those around you using the wisdom you have accumulated.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="section">
+                    <div id="container">
+                        <div style="display: flex">
+                            <div style="flex: 1">
+                                <div style="font-size: 48pt">GOALS</div>
+                            </div>
+                            <div style="flex: 1">
+                                <p>
+                                    After my college graduation, I want to be able to land a decent I.T.
+                                    job, preferably one that can test my skills in such a field, as long
+                                    as it aligns with the core values that I currently possess. I am also
+                                    planning to continue studying, this time in another field of
+                                    expertise like computer science or fine arts. Maybe have a family in
+                                    the future? I already have a name set for my will-be child.
+                                </p>
+                                <p>
+                                    Now where do I go from here? At this point, I am quite not sure yet,
+                                    to be frank. But one thing's for sure: whichever path fate may lead
+                                    me, <strong>it will be as thrilling as it is right now.</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-view">
+                <div id="section">
+                    <div class="fade-in-bg" style="background: url('./resources/bg-reflect.jpg') center no-repeat; background-size: cover; height: 60vh; z-index: -1;">
+                        <div style="background-color: #1212127f; height: inherit;">
+                            <div style="position: relative; top: 50%; transform: translateY(-50%); margin: 0 auto; padding: 16pt; z-index: 1; text-align: right;">
+                                <div class="from-left">
+                                    <span style="text-transform: uppercase; font-weight: bold; font-size: 24pt">It's all about the journey, not the destination.</span>
+                                    <p>In order to get the best results, instead of focusing on the goal, you should focus on how to actually get to that goal.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gradient" style="position: absolute; bottom: 0; width: 100vw; height: 64pt; z-index: 1;"></div>
+                    </div>
+                </div>
+                <div id="section">
+                    <div id="container">
+                        <div style="font-size: 24pt; font-weight: bold;">LEARNINGS</div>
+                        <p>
+                            If there is one thing that I've learned when I was in my practicum,
+                            it's that you should be prepared of what is about to come. This is
+                            just the beginning of the journey, and something that you should
+                            learn from, and continue to grow as you set yourself further ahead.
+                        </p>
+                        <p>
+                            College taught a lot of things for me: how to become a better person
+                            anyone can lean on, to be an individual who manages their resources
+                            responsibly, and take any constructive criticism, whether it was
+                            spoken harshly or not, as a way to improve upon yourself and learn
+                            from the mistakes, because mistakes make us human. That being said,
+                            however, committing the same mistakes over and over again will
+                            instead hinder my development, so as a responsible person, I have
+                            to make sure that those mistakes never happen again.
+                        </p>
+                        <p>
+                            I always believed that experience is the best teacher. Someone can
+                            only teach you so much about the real world, because at the end of
+                            the day, only you can determine how you can contribute to the
+                            betterment of those around you using the wisdom you have accumulated.
+                        </p>
+                    </div>
+                </div>
+                <div id="section">
+                    <div id="container">
+                        <div style="font-size: 24pt; font-weight: bold;">GOALS</div>
+                        <p>
+                            After my college graduation, I want to be able to land a decent I.T.
+                            job, preferably one that can test my skills in such a field, as long
+                            as it aligns with the core values that I currently possess. I am also
+                            planning to continue studying, this time in another field of
+                            expertise like computer science or fine arts. Maybe have a family in
+                            the future? I already have a name set for my will-be child.
+                        </p>
+                        <p>
+                            Now where do I go from here? At this point, I am quite not sure yet,
+                            to be frank. But one thing's for sure: whichever path fate may lead
+                            me, <strong>it will be as thrilling as it is right now.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="desktop-view">
+                    <div class="float-left" style="position:absolute;top:50%;transform: translateY(-50%);">
+                        <a href="https://facebook.com/jcdrc.07"><i class="fa-brands fa-facebook" style="width: 16pt"></i></a>
+                        <a href="https://instagram.com/jcdrc.07"><i class="fa-brands fa-instagram" style="width: 16pt"></i></a>
+                        <a href="mailto:gagaring.cedric@gmail.com"><i class="fa-solid fa-at" style="width: 16pt"></i></a>
+                        &emsp;|&emsp;Made with 💜 by JC.
+                    </div>
+                    <div class="float-right">
+                        <a href="./resources/GAGARING_Resume.pdf"><div class="btn-download-resume">DOWNLOAD RESUME</div></a>
+                    </div>
+                </div>
+                <div class="mobile-view">
+                    <a href="https://facebook.com/jcdrc.07"><i class="fa-brands fa-facebook" style="font-size:24pt; width: 24pt"></i></a>&ensp;
+                    <a href="https://instagram.com/jcdrc.07"><i class="fa-brands fa-instagram" style="font-size:24pt; width: 24pt"></i></a>&ensp;
+                    <a href="mailto:gagaring.cedric@gmail.com"><i class="fa-solid fa-at" style="font-size:24pt; width: 24pt"></i></a><br /><br />
+                    Made with 💜 by JC.<br /><br />
+                    <a href="./resources/GAGARING_Resume.pdf"><div class="btn-download-resume">DOWNLOAD RESUME</div></a>
+                </div>
+            </div>
+        </footer>
+        
+        <script type="text/javascript">
+            $('#toggleMenu').on("click", function() {
+                $('#mobileMenu').toggleClass("show");
+                $('body').toggleClass("lock-scroll");
+            });
+        </script>
+    </body>
+</html>

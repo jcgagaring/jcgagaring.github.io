@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:regular,bold,italic,bolditalic&display=swap');
+
+@import url('./headerbar.css');
+@import url('./footerbar.css');
+@import url('./color-scheme.css');
+@import url('./animation.css');
+
+:root {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14pt;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color-primary);
+    color: var(--txt-color-primary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--txt-color-primary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-palette-2);
+}
+
+#section {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#section #container {
+    position: relative;
+    width: 80vw;
+    margin: 32pt auto;
+}
+
+#toggleMenu { display: none; }
+
+#mobileMenu {
+    position: fixed;
+    background-color: var(--bg-color-primary);
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    z-index: 4;
+}
+#mobileMenu.show {
+    display: block;
+}
+
+body.lock-scroll {
+    overflow-y: hidden;
+}
+
+.btn-download-resume {
+    padding: 8pt 12pt;
+    background-color: var(--bg-color-primary);
+    border: 1px solid var(--bg-color-secondary);
+    border-radius: 8px;
+    box-shadow: 0 0 8px #0000007f;
+    transition: all 0.3s ease;
+}
+
+.btn-download-resume:hover {
+    background-color: var(--color-palette-2);
+    border-color: var(--color-palette-3);
+    color: white;
+}
+
+#mobileMenu .nav-button {
+    margin: 8pt 0;
+    padding: 8pt 12pt;
+    background-color: var(--bg-color-primary);
+    border: 1px solid var(--bg-color-secondary);
+    border-radius: 8px;
+    box-shadow: 0 0 8px #0000007f;
+    width: 100%;
+}
+
+.desktop-view { display: initial; }
+.mobile-view { display: none; }
+
+.float-left { float: left; }
+.float-right { float: right; }
+
+@media screen and (max-width: 810px) {
+    .desktop-view { display: none; }
+    .mobile-view { display: initial; }
+    
+    #section #container { padding: 8pt; }
+
+    #toggleMenu {
+        display: initial;
+        margin-right: 16px;
+        cursor: pointer;
+    }
+}

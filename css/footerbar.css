@@ -1,0 +1,23 @@
+@import url('./color-scheme.css');
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 24pt 0;
+    overflow: hidden;
+
+    background-color: var(--bg-color-secondary);
+    filter: drop-shadow(0 2px 8px #0000004f);
+}
+footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 810px) {
+    footer {
+        text-align: center;
+        padding: 16pt 0;
+    }
+}

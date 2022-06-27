@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>John Cedric Gagaring</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+        <style type="text/css">
+            #overlay {
+                position: relative;
+                height: 100vh;
+                width: 100vw;
+            }
+            #greeting {
+                position: absolute;
+                margin: auto;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-family: monospace;
+                font-size: 36pt;
+                width: 50%;
+            }
+            #lblGreeting {
+                text-transform: lowercase;
+            }
+            @media screen and (max-width: 800px) {
+                #greeting {
+                    top: 42%;
+                    left: 50%;
+                    transform: translate(-50%, -42%);
+                    font-size: 18pt;
+                    width: 90%;
+                }
+            }
+            @media screen and (max-width: 810px) {
+                footer {
+                    overflow: hidden;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="float-left" style="font-weight:bold">
+                    <a id="toggleMenu"><i class="fa-solid fa-bars"></i></a><a href="./index.html"><span class="desktop-view">JOHN CEDRIC</span><span class="mobile-view">JC</span> GAGARING</a>
+                </div>
+                <div class="float-right desktop-view">
+                    <nav>
+                        <a href="./about.html">ABOUT</a>
+                        <a href="./experience.html">EXPERIENCE</a>
+                        <a href="./works.html">WORKS</a>
+                        <a href="./reflect.html">REFLECT</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="mobileMenu">
+            <div style="height: 64pt"></div>
+            <div style="padding: 0 40pt 0 16pt;">
+                <nav>
+                    <a href="./about.html"><div class="nav-button">ABOUT</div></a>
+                    <a href="./experience.html"><div class="nav-button">EXPERIENCE</div></a>
+                    <a href="./works.html"><div class="nav-button">WORKS</div></a>
+                    <a href="./reflect.html"><div class="nav-button">REFLECT</div></a>
+                </nav>
+            </div>
+        </div>
+        <div class="body-content">
+            <div id="overlay">
+                <div id="greeting" class="fade-in">
+                    <span style="color: var(--color-palette-3)">~</span> <span style="color: var(--color-palette-2)">$</span> <span style="color: var(--color-palette-5)">&gt;</span> <span id="lblGreeting"></span><span id="cursorblink" class="anim-blink">|</span>
+                </div>
+            </div>
+        </div>
+        <footer style="position: fixed;">
+            <div class="container">
+                <div class="desktop-view">
+                    <div class="float-left" style="position:absolute;top:50%;transform: translateY(-50%);">
+                        <a href="https://facebook.com/jcdrc.07"><i class="fa-brands fa-facebook" style="width: 16pt"></i></a>
+                        <a href="https://instagram.com/jcdrc.07"><i class="fa-brands fa-instagram" style="width: 16pt"></i></a>
+                        <a href="mailto:gagaring.cedric@gmail.com"><i class="fa-solid fa-at" style="width: 16pt"></i></a>
+                        &emsp;|&emsp;Made with 💜 by JC.
+                    </div>
+                    <div class="float-right">
+                        <a href="./resources/GAGARING_Resume.pdf"><div class="btn-download-resume">DOWNLOAD RESUME</div></a>
+                    </div>
+                </div>
+                <div class="mobile-view">
+                    <a href="https://facebook.com/jcdrc.07"><i class="fa-brands fa-facebook" style="font-size:24pt; width: 24pt"></i></a>&ensp;
+                    <a href="https://instagram.com/jcdrc.07"><i class="fa-brands fa-instagram" style="font-size:24pt; width: 24pt"></i></a>&ensp;
+                    <a href="mailto:gagaring.cedric@gmail.com"><i class="fa-solid fa-at" style="font-size:24pt; width: 24pt"></i></a><br /><br />
+                    Made with 💜 by JC.<br /><br />
+                    <a href="./resources/GAGARING_Resume.pdf"><div class="btn-download-resume">DOWNLOAD RESUME</div></a>
+                </div>
+            </div>
+        </footer>
+        
+        <script type="text/javascript">
+            var $win = $(window);
+
+            var hourToday = new Date().getHours();
+            var greeting1 = "You're still awake?";
+            var greeting2 = "You have a long day ahead. Get some rest.";
+            var i = 0;
+            
+            if (hourToday >= 6 && hourToday < 12) {
+                greeting1 = "Good morning!";
+                greeting2 = "How are you today? Let's get this bread.";
+            }
+            else if (hourToday >= 12 && hourToday < 18) {
+                greeting1 = "Good afternoon!";
+                greeting2 = "This is your day. Don't waste it.";
+            }
+            else if (hourToday >= 18 && hourToday < 22) {
+                greeting1 = "Good evening.";
+                greeting2 = "Stay productive, even at night.";
+            }
+
+            $win.on("load", function () {
+                setTimeout(function () {
+                    animTypewrite(greeting1);
+                }, 1000);
+                setTimeout(function () {
+                    $("#lblGreeting").html("");
+                    i = 0;
+                }, 3250);
+                setTimeout(animTypewrite.bind(null, greeting2), 4500);
+            });
+
+            function animTypewrite(greeting) {
+                $('#cursorblink').removeClass('anim-blink');
+                if (i < greeting.length) {
+                    document.getElementById("lblGreeting").innerHTML += greeting.charAt(i);
+                    i++;
+                    setTimeout(animTypewrite.bind(null, greeting), 50);
+                } else {
+                    $('#cursorblink').addClass('anim-blink');
+                }
+            }
+
+            $('#toggleMenu').on("click", function() {
+                $('#mobileMenu').toggleClass("show");
+                $('body').toggleClass("lock-scroll");
+            });
+        </script>
+    </body>
+</html>

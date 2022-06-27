@@ -1,0 +1,15 @@
+:root {
+    --color-palette-1:      #663399;
+    --color-palette-2:      #7953A9;
+    --color-palette-3:      #8B74BD;
+    --color-palette-4:      #B9BFFF;
+    --color-palette-5:      #4066E0;
+    --color-palette-6:      #22277A;
+}
+
+:root {
+    --bg-color-primary:     #121212;
+    --bg-color-secondary:   #242424;
+    --txt-color-primary:    #FFFFFF;
+    --txt-color-secondary:  #F0F0F0;
+}

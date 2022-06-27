@@ -1,0 +1,28 @@
+@import url('./color-scheme.css');
+
+header {
+    font-size: 16pt;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 24pt 0;
+    z-index: 5;
+    overflow: hidden;
+
+    background-color: transparent;
+    filter: drop-shadow(0 -2px 8px #0000004f);
+}
+header .container {
+    width: 80%;
+    margin: 0 auto;
+}
+header .container .float-right a {
+    margin-left: 32pt;
+}
+
+@media screen and (max-width: 810px) {
+    header {
+        background-color: var(--bg-color-secondary);
+        padding: 16pt 0;
+    }
+}
