@@ -1,0 +1,152 @@
+@use '../colors' as *;
+@use '../mixins';
+
+$profile-picture-size: 200px;
+$container-width: 500px;
+$container-padding: 40px;
+
+body.index {
+
+    background: url('/res/img/olga-thelavart-vS3idIiYxX0-unsplash.jpg') center no-repeat;
+    background-size: cover;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        
+        .container {
+            margin: auto;
+            display: flex;
+            box-shadow: 0 4px 30px rgba($gray-900, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+
+            animation: fade-in 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.25s both,
+                scale-in 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.25s both;
+
+            .nameplate {
+                background-color: $gray-50;
+                padding: $container-padding;
+                width: 350px;
+                text-align: center;
+                
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 50px;
+
+                position: relative;
+
+                .profile-picture {
+                    .wrapper {
+                        width: $profile-picture-size;
+                        height: $profile-picture-size;
+                        background-color: $gray-50;
+                        border-radius: 50%;
+                        border: 10px solid $gray-50;
+                        box-shadow: 0 8px 20px rgba($gray-900, 0.3);
+                        overflow: hidden;
+                    }
+
+                    img {
+                        width: $profile-picture-size;
+                        height: $profile-picture-size;
+                    }
+                }
+
+                .body {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 30px;
+                    
+                    .name {
+                        text-transform: uppercase;
+                        font-size: 1.5rem;
+
+                        .first { font-weight: 900; }
+                    }
+
+                    .socials {
+                        background-color: rgba($red-100, 0.3);
+                        width: fit-content;
+                        padding: 10px 20px;
+                        border-radius: 100px;
+                        border: 1px solid rgba($red-300, 0.3);
+                        box-shadow: 0 4px 4px rgba($gray-900, 0.1);
+
+                        ul {
+                            font-size: 1.5rem;
+                            list-style-type: none;
+                            margin: 0; padding: 0;
+                            display: flex;
+                            gap: 16px;
+                        }
+
+                        a {
+                            transition: color 0.25s ease;
+                        }
+
+                        a:hover {
+                            color: $color-accent;
+                        }
+                    }
+                }
+            }
+
+            .terminal {
+                // background: linear-gradient(0deg, rgba($gray-900, 0.7), rgba($gray-700, 0.7));
+                background: url('/res/img/stacked-waves-haikei.svg') center no-repeat;
+                background-size: cover;
+                
+                font-family: 'JetBrains Mono', monospace;
+                padding: 32px;
+                width: 600px;
+                color: white;
+
+                backdrop-filter: blur(4px);
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                strong { font-weight: 600; }
+
+                .title { font-weight: 600; }
+
+                .quick-links {
+                    margin-top: 40px;
+                    display: flex;
+                    gap: 20px;
+                    
+                    .button {
+                        background-color: white;
+                        color: black;
+                        border-color: white;
+                        padding: 16px 32px;
+
+                        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+                    }
+
+                    .button:hover {
+                        background-color: transparent;
+                        color: white;
+                    }
+                }
+            }
+        }
+        
+        .credit {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            font-size: small;
+        }
+    }
+}

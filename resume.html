@@ -10,32 +10,32 @@
     <script src="res/js/fontawesome/all.min.js"></script>
     <script src="res/js/main.js"></script>
 </head>
-<body>
-    <div class="desktop-view">
-        <header class="header">
-            <div class="header__container">
-                <div class="header__logo">
-                    <div class="title"><i class="icon-beside fa-solid fa-glasses"></i><a href="/">JOHN CEDRIC GAGARING</a></div>
-                    <div class="subtitle">
-                        <svg class="icon-double-slash" viewBox="0 0 24 24" role="img" aria-label="//">
-                            <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                                <line x1="6" y1="20" x2="12" y2="4" />
-                                <line x1="12" y1="20" x2="18" y2="4" />
-                            </g>
-                        </svg>WEB DEVELOPER
-                    </div>
+<body class="resume">
+    <header class="header">
+        <div class="header__container">
+            <div class="logo">
+                <div class="title"><i class="icon-beside fa-solid fa-glasses"></i><a href="/">JOHN CEDRIC GAGARING</a></div>
+                <div class="subtitle">
+                    <svg class="icon-double-slash" viewBox="0 0 24 24" role="img" aria-label="//">
+                        <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                            <line x1="6" y1="20" x2="12" y2="4" />
+                            <line x1="12" y1="20" x2="18" y2="4" />
+                        </g>
+                    </svg>WEB DEVELOPER
                 </div>
-                <nav class="header__nav">
-                    <ul>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">RESUME</a></li>
-                        <li><a href="#">WORKS</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                    </ul>
-                </nav>
             </div>
-        </header>
-        <section class="hero">
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="/resume.html">RESUME</a></li>
+                    <li><a href="#">WORKS</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="content">
+        <div class="hero">
             <div class="hero__background"></div>
             <div class="hero__container">
                 <div class="hero__title">RESUME</div>
@@ -43,12 +43,12 @@
             </div>
             <div class="hero__credit">Photo credit: <a href="https://unsplash.com/photos/person-using-macbook-pro-npxXWgQ33ZQ">Glenn Carstens-Peters (Unsplash)</a></div>
             <div class="hero__hint">SCROLL DOWN<br><i class="fa-solid fa-chevron-down"></i></div>
-        </section>
-        <section class="content">
-            <div class="resume">
-                <div class="content__group">
+        </div>
+        <div class="body">
+            <div class="container">
+                <div class="container__group">
                     <h2><i class="icon-beside fa-solid fa-briefcase"></i>WORK EXPERIENCE</h2>
-                    <div class="content__box">
+                    <div class="container__box">
                         <div class="heading">
                             <div class="title">Full Stack Web Developer</div>
                             <div>WPH Digital Pte Ltd. (Remote) </div>
@@ -69,7 +69,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="content__box">
+                    <div class="container__box">
                         <div class="heading">
                             <div class="title">Associate Web Developer Intern</div>
                             <div>NeoDocto, Inc. (Remote)</div>
@@ -88,9 +88,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="content__group">
+                <div class="container__group">
                     <h2><i class="icon-beside fa-solid fa-graduation-cap"></i>EDUCATION</h2>
-                    <div class="content__box">
+                    <div class="container__box">
                         <div class="heading">
                             <div class="title">De La Salle University-Dasmarinas</div>
                             <div>College of Science and Computer Studies</div>
@@ -107,7 +107,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="content__box">
+                    <div class="container__box">
                         <div class="heading">
                             <div class="title">JCKL Academy, Inc.</div>
                             <div class="subtitle">Marilag Subdivision, E. Aguinaldo Highway, Dasmarinas City, Cavite 4114</div>
@@ -124,9 +124,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="content__group">
+                <div class="container__group">
                     <h2><i class="icon-beside fa-solid fa-ellipsis"></i>OTHER STUFF</h2>
-                    <div class="content__box" style="flex-direction: column;">
+                    <div class="container__box" style="flex-direction: column;">
                         <div style="display: flex;">
                             <div class="heading">
                                 <div class="title">Certifications</div>
@@ -176,40 +176,37 @@
                     <button class="button" type="button">Download Resume</button>
                 </div>
             </div>
-        </section>
-        <footer class="footer">
-            <div class="footer__container">
-                <div style="display: flex; flex-direction: column; gap: 20px;">
-                    <div class="footer__socials">
-                        <ul>
-                            <li><a href="https://facebook.com/jcdrc.07"><i class="fa-brands fa-facebook"></i></a></li>
-                            <li><a href="https://x.com/jcdrc07"><i class="fa-brands fa-square-x-twitter"></i></a></li>
-                            <li><a href="https://instagram.com/jcdrc.07"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="https://linkedin.com/in/jcdrc07"><i class="fa-brands fa-linkedin"></i></a></li>
-                            <li><a href="mailto:jcdrc.gagaring@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__copyright">
-                        <p>© <span id="currentYear">{currentYear}</span> Made with 💜 by John Cedric Gagaring</p>
-                        <p>Powered by <a href="http://github.com" style="font-weight:400">GitHub Pages</a></p>
-                    </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="left">
+                <div class="socials">
+                    <ul>
+                        <li><a href="https://facebook.com/jcdrc.07"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="https://x.com/jcdrc07"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                        <li><a href="https://instagram.com/jcdrc.07"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://linkedin.com/in/jcdrc07"><i class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a href="mailto:jcdrc.gagaring@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
+                    </ul>
                 </div>
-                <div>
-                    <nav class="footer__nav">
-                        <ul>
-                            <li><a href="/">HOME</a></li>
-                            <li><a href="#">ABOUT</a></li>
-                            <li><a href="#">RESUME</a></li>
-                            <li><a href="#">WORKS</a></li>
-                            <li><a href="#">CONTACT</a></li>
-                        </ul>
-                    </nav>
+                <div class="copyright">
+                    <p>© <span id="currentYear"></span> Made with 💜 by JC</p>
+                    <p>Powered by <a href="http://github.com" style="font-weight:400">GitHub Pages</a></p>
                 </div>
             </div>
-        </footer>
-    </div>
-    <div class="mobile-view">
-        This is for mobile
-    </div>
+            <div class="right">
+                <nav class="nav">
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="/resume.html">RESUME</a></li>
+                        <li><a href="#">WORKS</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

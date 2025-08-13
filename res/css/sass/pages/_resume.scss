@@ -1,0 +1,175 @@
+@use '../colors' as *;
+@use '../mixins';
+
+body.resume {
+    .header {
+        background-color: transparent;
+        position: fixed;
+        top: 0; left: 0;
+        box-shadow: unset;
+
+        transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+
+        &.scrolled {
+            background-color: $color-light-primary;
+            box-shadow: 0 0 10px rgba($gray-900, 0.5);
+        }
+    }
+
+    .content {
+
+        .hero {
+            height: 100vh;
+
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            
+            &__background {
+                background: linear-gradient(180deg, rgba($color-light-primary, 0.3) 0%, rgba($color-light-primary, 0.3) 60%, $color-light-primary 100%), url("/res/img/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 100vh;
+
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%;
+
+                opacity: 0;
+
+                animation: fade-in 1s cubic-bezier(0.5, 0, 0.5, 1) 0.25s both,
+                    background-scaling 1s cubic-bezier(0.5, 0, 0.5, 1) 0.25s both;
+
+                z-index: 0;
+            }
+
+            &__container {
+                margin: auto;
+
+                width: 80%;
+                
+                z-index: 1;
+
+                animation:
+                    hero-title-slide-up 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.25s both,
+                    fade-in 0.5s ease-in-out 0.25s both;
+            }
+
+            &__title {
+                font-size: 4rem;
+                font-weight: 900;
+                letter-spacing: 0.5rem;
+
+                background-color: rgba($color-light-primary, 0.75);
+                padding: 20px 40px;
+                border-radius: 20px;
+                backdrop-filter: blur(10px);
+                width: fit-content;
+                margin: auto;
+                filter: drop-shadow(0 8px 8px rgba($gray-900,0.5));
+            }
+
+            &__subtitle {
+                font-size: 1.5em;
+                font-weight: 400;
+                color: $gray-50;
+
+                padding-top: 20px;
+                max-width: 500px;
+                margin: auto;
+
+                filter: drop-shadow(0 3px 3px $gray-900);
+            }
+
+            &__credit {
+                position: absolute;
+                bottom: 16px;
+                left: 16px;
+                font-size: small;
+            }
+
+            &__hint {
+                position: absolute;
+                bottom: 10%;
+
+                font-weight: 400;
+                color: $gray-50;
+                filter: drop-shadow(0 3px 3px $gray-900);
+
+                animation: fade-in 0.5s ease-in-out 2s both;
+            }
+        }
+
+        .body {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+
+            .container {
+                max-width: 750px;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 100px;
+
+                h2 {
+                    margin-bottom: 40px;
+                    padding-bottom: 10px;
+                    border-bottom: 2px solid $color-accent;
+                }
+
+                &__group {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+
+                &__box {
+                    background-color: rgba($color-dark-primary, 0.05);
+                    padding: 32px;
+                    border-radius: 16px;
+                    border: 1px solid rgba($color-dark-primary, 0.1);
+                    box-shadow: 0 8px 20px rgba($gray-900, 0.1);
+
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 20px;
+
+                    .heading {
+                        padding-left: 20px;
+                        border-left: 4px solid $color-accent;
+                        height: fit-content;
+                    }
+
+                    .title {
+                        font-weight: 600;
+                        font-size: 1.2em;
+                        text-transform: uppercase;
+                    }
+
+                    .subtitle {
+                        font-size: 0.8em;
+                    }
+
+                    ul {
+                        list-style-type: square;
+
+                        li::marker {
+                            color: $color-accent;
+                        }
+                    }
+
+                    div {
+                        flex: 1;
+                    }
+                }
+            }
+        }
+    }
+}
