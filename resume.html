@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOHN CEDRIC GAGARING</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    
+    <meta name="description" content="My name is JC Gagaring. I like to make beautiful and colorful stuff while keeping things functional.">
+    <meta property="og:site_name" content="Resume - JOHN CEDRIC GAGARING">
+    <meta property="og:title" content="Resume - JOHN CEDRIC GAGARING">
+    <meta property="og:url" content="https://jcgagaring.github.io/resume">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Resume - JOHN CEDRIC GAGARING">
+    <meta itemprop="url" content="https://jcgagaring.github.io/resume">
+    <meta name="twitter:title" content="Resume - JOHN CEDRIC GAGARING">
+    <meta name="twitter:url" content="https://jcgagaring.github.io/resume">
+    <meta name="twitter:card" content="summary">
+
+    <title>Resume - JOHN CEDRIC GAGARING</title>
+
     <link rel="stylesheet" href="res/css/main.min.css">
     <link rel="stylesheet" href="res/css/fontawesome/all.min.css">
-    <script src="res/js/jquery-3.7.1.min.js"></script>
-    <script src="res/js/fontawesome/all.min.js"></script>
-    <script src="res/js/main.js"></script>
 </head>
 <body class="resume">
     <header class="header">
@@ -26,7 +37,7 @@
             </div>
             <nav class="nav">
                 <ul>
-                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="/about.html">ABOUT</a></li>
                     <li><a href="/resume.html">RESUME</a></li>
                     <li><a href="#">WORKS</a></li>
                     <li><a href="#">CONTACT</a></li>
@@ -38,8 +49,10 @@
         <div class="hero">
             <div class="hero__background"></div>
             <div class="hero__container">
-                <div class="hero__title">RESUME</div>
-                <div class="hero__subtitle">Work experience, educational attainment, and other stuff you need to know.</div>
+                <div class="hero__text">
+                    <div class="hero__title">RESUME</div>
+                    <div class="hero__subtitle">Work experience, educational attainment, and other stuff you need to know.</div>
+                </div>
             </div>
             <div class="hero__credit">Photo credit: <a href="https://unsplash.com/photos/person-using-macbook-pro-npxXWgQ33ZQ">Glenn Carstens-Peters (Unsplash)</a></div>
             <div class="hero__hint">SCROLL DOWN<br><i class="fa-solid fa-chevron-down"></i></div>
@@ -183,23 +196,23 @@
             <div class="left">
                 <div class="socials">
                     <ul>
-                        <li><a href="https://facebook.com/jcdrc.07"><i class="fa-brands fa-facebook"></i></a></li>
-                        <li><a href="https://x.com/jcdrc07"><i class="fa-brands fa-square-x-twitter"></i></a></li>
-                        <li><a href="https://instagram.com/jcdrc.07"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://linkedin.com/in/jcdrc07"><i class="fa-brands fa-linkedin"></i></a></li>
-                        <li><a href="mailto:jcdrc.gagaring@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
+                        <li><a href="https://facebook.com/jcdrc.07" title="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="https://x.com/jcdrc07" title="X (formerly Twitter)" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                        <li><a href="https://instagram.com/jcdrc.07" title="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://linkedin.com/in/jcdrc07" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a href="mailto:jcdrc.gagaring@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a></li>
                     </ul>
                 </div>
                 <div class="copyright">
-                    <p>© <span id="currentYear"></span> Made with 💜 by JC</p>
-                    <p>Powered by <a href="http://github.com" style="font-weight:400">GitHub Pages</a></p>
+                    <p>© <span id="copyrightYear"></span> Made with 💜 by JC</p>
+                    <p>Powered by <a href="http://github.com" target="_blank" style="font-weight:400">GitHub Pages</a></p>
                 </div>
             </div>
             <div class="right">
                 <nav class="nav">
                     <ul>
                         <li><a href="/">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="/about.html">ABOUT</a></li>
                         <li><a href="/resume.html">RESUME</a></li>
                         <li><a href="#">WORKS</a></li>
                         <li><a href="#">CONTACT</a></li>
@@ -208,5 +221,11 @@
             </div>
         </div>
     </footer>
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <!-- SCRIPTS -->
+    <script src="res/js/jquery-3.7.1.min.js"></script>
+    <script src="res/js/fontawesome/all.min.js"></script>
+    <script src="res/js/main.js"></script>
 </body>
 </html>

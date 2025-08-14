@@ -1,0 +1,3 @@
+sass --watch res/css/sass/main.scss res/css/main.css &
+sass --watch --style=compressed res/css/sass/main.scss res/css/main.min.css &
+

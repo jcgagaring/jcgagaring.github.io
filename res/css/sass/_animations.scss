@@ -28,11 +28,11 @@
 }
 
 @keyframes scale-in {
-    0% {
-        transform: scale(0.5);
-    }
+    0% { transform: scale(0.5); }
+    100% { transform: scale(1); }
+}
 
-    100% {
-        transform: scale(1);
-    }
+@keyframes hero-text-slide {
+    0% { transform: translateX(-100vh); }
+    100% { transform: translateX(0); }
 }

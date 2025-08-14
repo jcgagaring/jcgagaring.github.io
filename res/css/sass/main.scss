@@ -3,6 +3,7 @@
 @use 'animations';
 
 @use 'pages/index';
+@use 'pages/about';
 @use 'pages/resume';
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
@@ -12,7 +13,6 @@
 }
 
 html, body {
-    height: 100vh;
     margin: 0;
 }
 
@@ -25,9 +25,10 @@ body {
     .header {
         background-color: $color-light-primary;
         position: sticky;
+        top: 0;
         width: 100%;
         z-index: 100;
-        box-shadow: 0 0 10px rgba($gray-900, 0.5);
+        box-shadow: 0 0 5px rgba($gray-900, 0.3);
 
         .logo {
             div {
@@ -115,16 +116,15 @@ body {
             margin: auto;
         }
     }
-    
-    // .container {
-    //     padding: 20px;
-    //     max-width: 1200px;
-    //     margin: auto;
-    // }
 }
 
 main {
     flex-grow: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -147,13 +147,13 @@ a {
 }
 
 .button {
-    padding: 8px 14px;
+    padding: 12px 24px;
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 600;
-    border: 2px solid $red-a400;
+    border: 2px solid $color-accent;
     border-radius: 100px;
-    background-color: $red-a400;
+    background-color: $color-accent;
     color: $gray-50;
     box-shadow: 0 4px 8px rgba($gray-900, 0.3);
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -177,6 +177,41 @@ a {
         width: 2px;
         height: 50%;
     }
+}
+
+.scroll-to-top {
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $color-accent;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    transform: translateX(200px);
+
+    box-shadow: 0 4px 8px rgba($gray-500, 0.5);
+
+    transition: background-color 0.2s ease-in-out,
+        color 0.2s ease-in-out,
+        transform 0.35s cubic-bezier(0.3, 0, 0.3, 1);
+    
+    cursor: pointer;
+
+    &.scrolled {
+        transform: translateX(0);
+    }
+}
+
+.scroll-to-top:hover {
+    background-color: $gray-50;
+    color: black;
 }
 
 ::-webkit-scrollbar {

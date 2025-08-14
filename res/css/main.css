@@ -33,9 +33,18 @@
     transform: scale(1);
   }
 }
+@keyframes hero-text-slide {
+  0% {
+    transform: translateX(-100vh);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 body.index {
   background: url("/res/img/olga-thelavart-vS3idIiYxX0-unsplash.jpg") center no-repeat;
   background-size: cover;
+  height: 100vh;
 }
 body.index .content {
   display: flex;
@@ -154,6 +163,179 @@ body.index .content .credit {
   font-size: small;
 }
 
+body.about .content .hero {
+  height: 800px;
+  width: 80%;
+  margin: 32px auto;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: end;
+}
+body.about .content .hero__background {
+  background: linear-gradient(180deg, rgba(33, 33, 33, 0.3), rgba(33, 33, 33, 0.3)), url("/res/img/bg-about.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  animation: fade-in 1s cubic-bezier(0.5, 0, 0.5, 1) both, background-scaling 2s cubic-bezier(0.5, 0, 0.5, 1) both;
+  z-index: 0;
+}
+body.about .content .hero__container {
+  margin: 128px;
+  border-left: 8px solid #D50000;
+  overflow: hidden;
+  animation: fade-in 0.5s ease 0.5s both;
+  z-index: 1;
+}
+body.about .content .hero__text {
+  margin-left: 32px;
+  animation: hero-text-slide 1s cubic-bezier(0, 0.5, 0, 1) 1s both;
+  color: #fafafa;
+}
+body.about .content .hero__title {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+}
+body.about .content .hero__subtitle {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+body.about .content .hero__credit {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: small;
+}
+body.about .content .hero__hint {
+  position: absolute;
+  bottom: 10%;
+  font-weight: 400;
+  color: #fafafa;
+  filter: drop-shadow(0 3px 3px #212121);
+  animation: fade-in 0.5s ease-in-out 2s both;
+}
+body.about .content .body {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+body.about .content .body .who-am-i {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+body.about .content .body .who-am-i .picture {
+  width: 400px;
+  height: 600px;
+  margin: auto;
+  background: url("/res/img/me.jpg") center no-repeat;
+  background-size: cover;
+  border: 16px solid white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(33, 33, 33, 0.3);
+  transform: rotate(4deg);
+}
+body.about .content .body .who-am-i .heading {
+  letter-spacing: -0.05em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #D50000;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+body.about .content .body .who-am-i .subtitle {
+  font-weight: 400;
+  color: #9e9e9e;
+  padding: 32px 0;
+}
+body.about .content .body .skillsets {
+  background: linear-gradient(to bottom left, #EF9A9A, transparent), linear-gradient(to top left, #FFEBEE, transparent), linear-gradient(to bottom right, #FFEBEE, transparent), linear-gradient(to top right, #EF9A9A, transparent);
+  padding: 64px;
+  border-radius: 16px;
+  border: 1px solid rgba(97, 97, 97, 0.1);
+  box-shadow: 0 8px 20px rgba(33, 33, 33, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+body.about .content .body .skillsets .summary {
+  border-left: 4px solid #D50000;
+  padding-left: 16px;
+  height: fit-content;
+}
+body.about .content .body .skillsets .summary .title {
+  font-size: 2em;
+  font-weight: 600;
+}
+body.about .content .body .skillsets ul {
+  list-style-type: square;
+  padding: 0;
+}
+body.about .content .body .skillsets ul li::marker {
+  color: #D50000;
+}
+body.about .content .body .container {
+  max-width: 750px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+body.about .content .body .container h2 {
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #D50000;
+}
+body.about .content .body .container__group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body.about .content .body .container__box {
+  background-color: rgba(97, 97, 97, 0.05);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(97, 97, 97, 0.1);
+  box-shadow: 0 8px 20px rgba(33, 33, 33, 0.1);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+body.about .content .body .container__box .heading {
+  padding-left: 20px;
+  border-left: 4px solid #D50000;
+  height: fit-content;
+}
+body.about .content .body .container__box .title {
+  font-weight: 600;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+body.about .content .body .container__box .subtitle {
+  font-size: 0.8em;
+}
+body.about .content .body .container__box ul {
+  list-style-type: square;
+}
+body.about .content .body .container__box ul li::marker {
+  color: #D50000;
+}
+body.about .content .body .container__box div {
+  flex: 1;
+}
+
 body.resume .header {
   background-color: transparent;
   position: fixed;
@@ -164,16 +346,14 @@ body.resume .header {
 }
 body.resume .header.scrolled {
   background-color: #f5f5f5;
-  box-shadow: 0 0 10px rgba(33, 33, 33, 0.5);
+  box-shadow: 0 0 5px rgba(33, 33, 33, 0.3);
 }
 body.resume .content .hero {
   height: 100vh;
   position: relative;
   overflow: hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
 }
 body.resume .content .hero__background {
   background: linear-gradient(180deg, rgba(245, 245, 245, 0.3) 0%, rgba(245, 245, 245, 0.3) 60%, #f5f5f5 100%), url("/res/img/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg");
@@ -186,35 +366,28 @@ body.resume .content .hero__background {
   left: 0;
   width: 100%;
   opacity: 0;
-  animation: fade-in 1s cubic-bezier(0.5, 0, 0.5, 1) 0.25s both, background-scaling 1s cubic-bezier(0.5, 0, 0.5, 1) 0.25s both;
+  animation: fade-in 1s cubic-bezier(0.5, 0, 0.5, 1) both, background-scaling 2.5s cubic-bezier(0.5, 0, 0.5, 1) both;
   z-index: 0;
 }
 body.resume .content .hero__container {
-  margin: auto;
-  width: 80%;
+  margin: 0 128px;
+  border-left: 8px solid #D50000;
+  overflow: hidden;
+  animation: fade-in 0.5s ease 0.5s both;
   z-index: 1;
-  animation: hero-title-slide-up 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.25s both, fade-in 0.5s ease-in-out 0.25s both;
+}
+body.resume .content .hero__text {
+  margin-left: 32px;
+  animation: hero-text-slide 1s cubic-bezier(0, 0.5, 0, 1) 1s both;
 }
 body.resume .content .hero__title {
   font-size: 4rem;
   font-weight: 900;
-  letter-spacing: 0.5rem;
-  background-color: rgba(245, 245, 245, 0.75);
-  padding: 20px 40px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  width: fit-content;
-  margin: auto;
-  filter: drop-shadow(0 8px 8px rgba(33, 33, 33, 0.5));
+  letter-spacing: 0.2rem;
 }
 body.resume .content .hero__subtitle {
   font-size: 1.5em;
   font-weight: 400;
-  color: #fafafa;
-  padding-top: 20px;
-  max-width: 500px;
-  margin: auto;
-  filter: drop-shadow(0 3px 3px #212121);
 }
 body.resume .content .hero__credit {
   position: absolute;
@@ -225,6 +398,9 @@ body.resume .content .hero__credit {
 body.resume .content .hero__hint {
   position: absolute;
   bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
   font-weight: 400;
   color: #fafafa;
   filter: drop-shadow(0 3px 3px #212121);
@@ -290,7 +466,6 @@ body.resume .content .body .container__box div {
 }
 
 html, body {
-  height: 100vh;
   margin: 0;
 }
 
@@ -303,9 +478,10 @@ body {
 body .header {
   background-color: #f5f5f5;
   position: sticky;
+  top: 0;
   width: 100%;
   z-index: 100;
-  box-shadow: 0 0 10px rgba(33, 33, 33, 0.5);
+  box-shadow: 0 0 5px rgba(33, 33, 33, 0.3);
 }
 body .header .logo div {
   display: inline;
@@ -380,6 +556,11 @@ main {
   flex-grow: 1;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -400,13 +581,13 @@ a {
 }
 
 .button {
-  padding: 8px 14px;
+  padding: 12px 24px;
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 600;
-  border: 2px solid #FF1744;
+  border: 2px solid #D50000;
   border-radius: 100px;
-  background-color: #FF1744;
+  background-color: #D50000;
   color: #fafafa;
   box-shadow: 0 4px 8px rgba(33, 33, 33, 0.3);
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -428,6 +609,34 @@ a {
 .divider.vertical {
   width: 2px;
   height: 50%;
+}
+
+.scroll-to-top {
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D50000;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  border: none;
+  transform: translateX(200px);
+  box-shadow: 0 4px 8px rgba(158, 158, 158, 0.5);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.35s cubic-bezier(0.3, 0, 0.3, 1);
+  cursor: pointer;
+}
+.scroll-to-top.scrolled {
+  transform: translateX(0);
+}
+
+.scroll-to-top:hover {
+  background-color: #fafafa;
+  color: black;
 }
 
 ::-webkit-scrollbar {

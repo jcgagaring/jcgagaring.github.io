@@ -1,28 +1,48 @@
-$(window).ready(() => {
-    $('#currentYear').html(new Date().getFullYear());
+// header
+(() => {
+    console.log('header');
+    const $header = $('.header');
 
-    $('span#greeting').html(greeting());
-})
+    $(window).on('scroll', () => {
+        if ($(this).scrollTop() > 16)
+            $header.addClass('scrolled');
+        else
+            $header.removeClass('scrolled');
+    });
+})();
 
-$(window).on('scroll', () => {
-    if ($(this).scrollTop() > 16) {
-        $('.header').addClass('scrolled');
-    }
-    else {
-        $('.header').removeClass('scrolled');
-    }
-})
+// scroll to top
+(() => {
+    console.log('scroll to top');
+    const $btnScrollToTop = $('#scrollToTop');
 
-function greeting() {
+    if ($(this).scrollTop() > 250)
+        $btnScrollToTop.addClass('scrolled');
+    
+    $(window).on('scroll', () => {
+        if ($(this).scrollTop() > 250)
+            $btnScrollToTop.addClass('scrolled');
+        else
+            $btnScrollToTop.removeClass('scrolled');
+    });
+
+    $btnScrollToTop.click(() => {
+        $('html, body').animate({scrollTop: 0}, 1000);
+    });
+})();
+
+// greetings
+(() => {
+    const $greetingText = $('#greeting');
     const hour = new Date().getHours();
-
-    let greeting = "Still awake? You have a long day ahead. Get some rest.";
 
     const greetings = [
         { start: 6,  end: 12, msg: "Good morning! How are you today? Let's get this bread." },
         { start: 12, end: 18, msg: "Good afternoon! This is your day; don't waste it." },
         { start: 18, end: 22, msg: "Good evening! Day's about to end; do what you desire." },
     ];
+
+    let greeting = "Still awake? You have a long day ahead. Get some rest.";
 
     for (const g of greetings) {
         if (hour >= g.start && hour < g.end) {
@@ -31,5 +51,13 @@ function greeting() {
         }
     }
 
-    return greeting;
-};
+    $greetingText.html(greeting);
+})();
+
+// copyright year thing
+(() => {
+    const $copyrightYear = $('#copyrightYear');
+    const yearToday = new Date().getFullYear();
+
+    $copyrightYear.html(yearToday);
+})();
