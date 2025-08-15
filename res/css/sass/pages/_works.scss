@@ -1,0 +1,151 @@
+@use '../colors' as *;
+@use '../mixins';
+
+body.works {
+    .header {
+        background-color: transparent;
+        position: fixed;
+        top: 0; left: 0;
+        box-shadow: unset;
+
+        transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+
+        &.scrolled {
+            background-color: $color-light-primary;
+            box-shadow: 0 0 5px rgba($gray-900, 0.3);
+        }
+    }
+
+    .content {
+        .hero {
+            height: 100vh;
+
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            
+            &__background {
+                background: linear-gradient(180deg, rgba($color-light-primary, 0.5) 0%, rgba($color-light-primary, 0.5) 60%, $color-light-primary 100%), url("/res/img/brienne-hong-xEPMg4qfjOs-unsplash.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 100vh;
+
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%;
+
+                opacity: 0;
+
+                animation: fade-in 1s cubic-bezier(0.5, 0, 0.5, 1) both,
+                    background-scaling 2.5s cubic-bezier(0.5, 0, 0.5, 1) both;
+
+                z-index: 0;
+            }
+
+            &__container {
+                margin: 0 128px;
+                border-left: 8px solid $color-accent;
+                overflow: hidden;
+                animation: fade-in 0.5s ease 0.5s both;
+
+                z-index: 1;
+            }
+
+            &__text {
+                margin-left: 32px;
+                animation: hero-text-slide 1s cubic-bezier(0, 0.5, 0, 1) 1s both;
+            }
+
+            &__title {
+                font-size: 4rem;
+                font-weight: 900;
+                letter-spacing: 0.2rem;
+            }
+
+            &__subtitle {
+                font-size: 1.5em;
+                font-weight: 400;
+            }
+            &__credit {
+                position: absolute;
+                bottom: 16px;
+                left: 16px;
+                font-size: small;
+            }
+
+            &__hint {
+                position: absolute;
+                bottom: 10%;
+                left: 50%;
+                transform: translate(-50%);
+
+                text-align: center;
+                font-weight: 400;
+                color: $gray-50;
+                filter: drop-shadow(0 3px 3px $gray-900);
+
+                animation: fade-in 0.5s ease-in-out 2s both;
+            }
+        }
+
+        .body {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+
+            .works-box {
+                display: grid;
+                grid-template-rows: auto auto;
+                gap: 20px;
+                margin: 100px 0;
+
+                background-color: rgba($color-dark-primary, 0.05);
+                padding: 32px;
+                border-radius: 16px;
+                border: 1px solid rgba($color-dark-primary, 0.1);
+                box-shadow: 0 8px 20px rgba($gray-900, 0.1);
+
+                .summary-row {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    gap: 40px;
+
+                    .summary {
+                        .heading { letter-spacing: -0.01em; }
+
+                        .subtitle {
+                            font-weight: 400;
+                            font-style: italic;
+                            color: $gray-500;
+                        }
+                    }
+
+                    .picture {
+                        img {
+                            height: 100%; width: 100%;
+                            object-fit: cover;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 8px rgba($gray-900, 0.3);
+                        }
+                    }
+                }
+
+                .gallery-row {
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    gap: 20px;
+
+                    img {
+                        height: 100%; width: 100%;
+                        object-fit: cover;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 8px rgba($gray-900, 0.3);
+                    }
+                }
+            }
+        }
+    }
+}

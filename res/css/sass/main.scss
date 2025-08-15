@@ -5,6 +5,7 @@
 @use 'pages/index';
 @use 'pages/about';
 @use 'pages/resume';
+@use 'pages/works';
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
@@ -21,50 +22,37 @@ body {
     flex-direction: column;
     font-weight: 200;
     background-color: $color-light-primary;
+}
 
-    .header {
-        background-color: $color-light-primary;
-        position: sticky;
-        top: 0;
-        width: 100%;
-        z-index: 100;
-        box-shadow: 0 0 5px rgba($gray-900, 0.3);
+.header {
+    background-color: $color-light-primary;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 0 5px rgba($gray-900, 0.3);
 
-        .logo {
-            div {
-                display: inline;
+    .logo {
+        div {
+            display: inline;
 
-                @include mixins.lg {
-                    display: block;
-                }
-            }
-            .title {
-                font-weight: 900;
-                font-size: 1.5rem;
+            @include mixins.lg {
+                display: block;
             }
         }
-
-        .nav {
-            ul {
-                list-style-type: none;
-                margin: 0; padding: 0;
-                display: flex;
-                gap: 20px;
-            }
-
-            a {
-                transition: color 0.25s ease;
-            }
-
-            a:hover {
-                color: $color-accent;
-            }
+        .title {
+            font-weight: 900;
+            font-size: 1.5rem;
         }
     }
 
-    .footer {
-        background-color: $gray-900;
-        color: $gray-50;
+    .nav {
+        ul {
+            list-style-type: none;
+            margin: 0; padding: 0;
+            display: flex;
+            gap: 20px;
+        }
 
         a {
             transition: color 0.25s ease;
@@ -74,47 +62,60 @@ body {
             color: $color-accent;
         }
 
-        .left {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            flex: 3;
-
-            .socials {
-                ul {
-                    font-size: 1.5rem;
-                    list-style-type: none;
-                    margin: 0; padding: 0;
-                    display: flex;
-                    gap: 16px;
-                }
-            }
-        }
-
-        .right {
-            flex: 1;
-
-            .nav {
-                ul {
-                    list-style-type: none;
-                    margin: 0; padding: 0;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 20px;
-                }
-            }
+        @include mixins.md {
+            display: none;
         }
     }
+}
 
-    .header, .footer {
-        &__container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 32px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
+.footer {
+    background-color: $gray-900;
+    color: $gray-50;
+
+    a {
+        transition: color 0.25s ease;
+    }
+
+    a:hover {
+        color: $color-accent;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 3;
+    }
+
+    .right {
+        flex: 1;
+    }
+
+    .socials ul {
+        font-size: 1.5rem;
+        list-style-type: none;
+        margin: 0; padding: 0;
+        display: flex;
+        gap: 16px;
+    }
+
+    .nav ul {
+        list-style-type: none;
+        margin: 0; padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.header, .footer {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 32px 20px;
+        max-width: 1200px;
+        margin: auto;
     }
 }
 

@@ -2,7 +2,6 @@
 @use '../mixins';
 
 body.about {
-
     .content {
         .hero {
             height: 800px;
@@ -156,66 +155,6 @@ body.about {
 
                     li::marker {
                         color: $color-accent;
-                    }
-                }
-            }
-
-            .container {
-                max-width: 750px;
-                margin: auto;
-                display: flex;
-                flex-direction: column;
-                gap: 100px;
-
-                h2 {
-                    margin-bottom: 40px;
-                    padding-bottom: 10px;
-                    border-bottom: 2px solid $color-accent;
-                }
-
-                &__group {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 20px;
-                }
-
-                &__box {
-                    background-color: rgba($color-dark-primary, 0.05);
-                    padding: 32px;
-                    border-radius: 16px;
-                    border: 1px solid rgba($color-dark-primary, 0.1);
-                    box-shadow: 0 8px 20px rgba($gray-900, 0.1);
-
-                    display: flex;
-                    justify-content: space-between;
-                    gap: 20px;
-
-                    .heading {
-                        padding-left: 20px;
-                        border-left: 4px solid $color-accent;
-                        height: fit-content;
-                    }
-
-                    .title {
-                        font-weight: 600;
-                        font-size: 1.2em;
-                        text-transform: uppercase;
-                    }
-
-                    .subtitle {
-                        font-size: 0.8em;
-                    }
-
-                    ul {
-                        list-style-type: square;
-
-                        li::marker {
-                            color: $color-accent;
-                        }
-                    }
-
-                    div {
-                        flex: 1;
                     }
                 }
             }
