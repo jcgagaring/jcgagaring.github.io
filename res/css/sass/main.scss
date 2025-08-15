@@ -62,9 +62,15 @@ body {
             color: $color-accent;
         }
 
-        @include mixins.md {
+        @include mixins.sm {
             display: none;
         }
+    }
+
+    @include mixins.sm {
+        .icon-beside { display: none; }
+
+        div.subtitle { display: none; }
     }
 }
 

@@ -29,6 +29,7 @@ body.index {
 
             @include mixins.xl {
                 flex-direction: column;
+                margin: 20px;
             }
 
             .nameplate {
@@ -44,6 +45,11 @@ body.index {
                 gap: 50px;
 
                 position: relative;
+
+                @include mixins.xl {
+                    width: initial;
+                    padding: 20px;
+                }
 
                 .profile-picture {
                     .wrapper {
@@ -118,6 +124,10 @@ body.index {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+
+                @include mixins.xl {
+                    display: none;
+                }
 
                 strong { font-weight: 600; }
 
