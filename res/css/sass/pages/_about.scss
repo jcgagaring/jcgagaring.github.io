@@ -1,26 +1,37 @@
 @use '../colors' as *;
-@use '../mixins';
+@use '../mixins' as *;
 
 body.about {
+    .header {
+        background-color: transparent;
+        position: fixed;
+        top: 0; left: 0;
+        box-shadow: unset;
+
+        transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+
+        &.scrolled {
+            background-color: $color-light-primary;
+            box-shadow: 0 0 5px rgba($gray-900, 0.3);
+        }
+    }
+
     .content {
         .hero {
-            height: 800px;
-            width: 80%;
-            margin: 32px auto;
-            border-radius: 16px;
+            height: 100vh;
 
             position: relative;
             overflow: hidden;
 
             display: flex;
-            align-items: end;
+            align-items: center;
             
             &__background {
-                background: linear-gradient(180deg, rgba($gray-900, 0.3), rgba($gray-900, 0.3)), url("/res/img/bg-about.jpg");
+                background: linear-gradient(180deg, rgba($color-light-primary, 0.5) 0%, rgba($color-light-primary, 0.5) 60%, $color-light-primary 100%), url("/res/img/bg-about.jpg");
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
-                height: inherit;
+                height: 100vh;
 
                 position: absolute;
                 top: 0; left: 0;
@@ -29,13 +40,20 @@ body.about {
                 opacity: 0;
 
                 animation: fade-in 1s cubic-bezier(0.5, 0, 0.5, 1) both,
-                    background-scaling 2s cubic-bezier(0.5, 0, 0.5, 1) both;
+                    background-scaling 2.5s cubic-bezier(0.5, 0, 0.5, 1) both;
 
                 z-index: 0;
+
+                @include max-screen('lg') {
+                    background: linear-gradient(180deg, rgba($color-light-primary, 0.5) 0%, rgba($color-light-primary, 0.5) 60%, $color-light-primary 100%), url("/res/img/me.jpg");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
             }
 
             &__container {
-                margin: 128px;
+                margin: 0 128px;
                 border-left: 8px solid $color-accent;
                 overflow: hidden;
                 animation: fade-in 0.5s ease 0.5s both;
@@ -46,7 +64,6 @@ body.about {
             &__text {
                 margin-left: 32px;
                 animation: hero-text-slide 1s cubic-bezier(0, 0.5, 0, 1) 1s both;
-                color: $gray-50;
             }
 
             &__title {
@@ -59,7 +76,6 @@ body.about {
                 font-size: 1.5em;
                 font-weight: 400;
             }
-
             &__credit {
                 position: absolute;
                 bottom: 16px;
@@ -70,12 +86,29 @@ body.about {
             &__hint {
                 position: absolute;
                 bottom: 10%;
+                left: 50%;
+                transform: translate(-50%);
 
+                text-align: center;
                 font-weight: 400;
                 color: $gray-50;
                 filter: drop-shadow(0 3px 3px $gray-900);
 
                 animation: fade-in 0.5s ease-in-out 2s both;
+            }
+
+            @include max-screen('lg') {
+                &__container {
+                    margin: 0 32px;
+                }
+
+                &__title {
+                    font-size: 2.5em;
+                }
+
+                &__subtitle {
+                    font-size: 1em;
+                }
             }
         }
 
@@ -151,11 +184,30 @@ body.about {
 
                 ul {
                     list-style-type: square;
-                    padding: 0;
 
                     li::marker {
                         color: $color-accent;
                     }
+                }
+            }
+            
+            @include max-screen('lg') {
+                .who-am-i {
+                    display: block;
+                    grid-template-columns: unset;
+                    .picture {
+                        display: none;
+                    }
+                }
+            }
+
+            @include max-screen('md') {
+                .skillsets {
+                    padding: 32px;
+
+                    grid-template-columns: unset;
+                    grid-template-rows: auto auto;
+                    gap: 20px;
                 }
             }
         }

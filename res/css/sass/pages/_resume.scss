@@ -1,5 +1,5 @@
 @use '../colors' as *;
-@use '../mixins';
+@use '../mixins' as *;
 
 body.resume {
     .header {
@@ -89,16 +89,32 @@ body.resume {
 
                 animation: fade-in 0.5s ease-in-out 2s both;
             }
+
+            @include max-screen('lg') {
+                &__container {
+                    margin: 0 32px;
+                }
+
+                &__title {
+                    font-size: 2.5em;
+                }
+
+                &__subtitle {
+                    font-size: 1em;
+                }
+            }
         }
 
         .body {
             max-width: 1200px;
             margin: auto;
             padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
             .container {
                 max-width: 750px;
-                margin: auto;
                 display: flex;
                 flex-direction: column;
                 gap: 100px;
@@ -126,6 +142,14 @@ body.resume {
                     justify-content: space-between;
                     gap: 20px;
 
+                    &.others {
+                        flex-direction: column;
+
+                        .section {
+                            display: flex;
+                        }
+                    }
+
                     .heading {
                         padding-left: 20px;
                         border-left: 4px solid $color-accent;
@@ -152,6 +176,17 @@ body.resume {
 
                     div {
                         flex: 1;
+                    }
+                }
+            }
+
+            @include max-screen('md') {
+                .container__box {
+                    flex-direction: column;
+
+                    &.others .section {
+                        flex-direction: column;
+                        gap: 20px;
                     }
                 }
             }

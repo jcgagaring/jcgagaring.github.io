@@ -1,4 +1,4 @@
-@use 'mixins';
+@use 'mixins' as *;
 @use 'colors' as *;
 @use 'animations';
 
@@ -33,13 +33,8 @@ body {
     box-shadow: 0 0 5px rgba($gray-900, 0.3);
 
     .logo {
-        div {
-            display: inline;
-
-            @include mixins.lg {
-                display: block;
-            }
-        }
+        div { display: inline; }
+        
         .title {
             font-weight: 900;
             font-size: 1.5rem;
@@ -61,16 +56,82 @@ body {
         a:hover {
             color: $color-accent;
         }
-
-        @include mixins.sm {
-            display: none;
-        }
     }
 
-    @include mixins.sm {
-        .icon-beside { display: none; }
+    .menu-button {
+        font-size: 1.5rem;
+        margin-left: 20px;
+    }
+}
 
-        div.subtitle { display: none; }
+.mobile-menu {
+    position: fixed;
+    top: 0; left: 0;
+    overflow: hidden;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: $color-light-primary;
+
+    z-index: 200;
+
+    transform: translateX(-100%);
+    transition: transform 0.25s ease-in-out;
+
+    &.active {
+        transform: translateX(0%);
+    }
+
+    &__back {
+        position: fixed;
+        top: 0; left: 0;
+        overflow: hidden;
+
+        height: 100vh;
+        width: 100vw;
+
+        background-color: black;
+        
+        opacity: 0;
+        transition: opacity 0.25s ease-in-out;
+        z-index: 199;
+
+        pointer-events: none;
+
+        &.active {
+            opacity: 0.8;
+            display: block;
+        }
+    }
+    
+    &__nav {
+        ul {
+            list-style-type: none;
+            text-align: center;
+            padding: 0;
+            margin: 0 32px;
+
+            li {
+                padding: 8px 0;
+                border-top: 1px solid $color-primary;
+
+                &:first-child {
+                    border-top: none;
+                }
+            }
+        }
+    }
+            
+    &__item {
+        padding: 24px 0;
+    }
+
+    .close-button {
+        font-size: 2rem;
+        margin: 10px;
+
+        text-align: right;
     }
 }
 
@@ -235,4 +296,32 @@ a {
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: $color-text-icons;
+}
+
+@include max-screen('lg') {
+    .header {
+        .logo div {
+            display: block;
+        }
+    }
+    
+    .footer__container {
+        flex-direction: column;
+        align-items: start;
+        gap: 40px;
+    }
+}
+
+@include max-screen('sm') {
+    .header {
+        .nav { display: none; }
+        .icon-beside { display: none; }
+        div.subtitle { display: none; }
+    }
+}
+
+@include min-screen('sm') {
+    .menu-button {
+        display: none;
+    }
 }

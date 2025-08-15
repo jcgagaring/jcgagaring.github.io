@@ -1,29 +1,24 @@
-@use 'breakpoints' as bp;
+@use 'sass:map';
+@use 'breakpoints' as *;
 
-// Small devices
-@mixin sm {
-   @media (max-width: #{bp.$screen-sm-min}) {
-       @content;
-   }
+@mixin min-screen($size) {
+    @if map.has-key($breakpoints, $size) {
+        @media (min-width: map.get($breakpoints, $size)) {
+            @content;
+        }
+    }
+    @else {
+        @warn "No breakpoint found for `#{$size}`.";
+    }
 }
 
-// Medium devices
-@mixin md {
-   @media (max-width: #{bp.$screen-md-min}) {
-       @content;
-   }
-}
-
-// Large devices
-@mixin lg {
-   @media (max-width: #{bp.$screen-lg-min}) {
-       @content;
-   }
-}
-
-// Extra large devices
-@mixin xl {
-   @media (max-width: #{bp.$screen-xl-min}) {
-       @content;
-   }
+@mixin max-screen($size) {
+    @if map.has-key($breakpoints, $size) {
+        @media (max-width: (map.get($breakpoints, $size) - 1)) {
+            @content;
+        }
+    }
+    @else {
+        @warn "No breakpoint found for `#{$size}`.";
+    }
 }

@@ -3,8 +3,11 @@
     console.log('header');
     const $header = $('.header');
 
+    if ($(this).scrollTop() > 20)
+        $header.addClass('scrolled');
+
     $(window).on('scroll', () => {
-        if ($(this).scrollTop() > 16)
+        if ($(this).scrollTop() > 20)
             $header.addClass('scrolled');
         else
             $header.removeClass('scrolled');
@@ -60,4 +63,19 @@
     const yearToday = new Date().getFullYear();
 
     $copyrightYear.html(yearToday);
+})();
+
+// mobile menu
+(() => {
+    const $mobileMenuButton = $('.menu-button');
+    const $mobileMenuCloseButton = $('.close-button');
+    const $mobileMenu = $('.mobile-menu, .mobile-menu__back');
+
+    $mobileMenuButton.on('click', () => {
+        $mobileMenu.addClass('active');
+    });
+
+    $mobileMenuCloseButton.on('click', () => {
+        $mobileMenu.removeClass('active');
+    });
 })();

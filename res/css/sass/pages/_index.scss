@@ -1,5 +1,5 @@
 @use '../colors' as *;
-@use '../mixins';
+@use '../mixins' as *;
 
 $profile-picture-size: 200px;
 
@@ -27,11 +27,6 @@ body.index {
             animation: fade-in 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.25s both,
                 scale-in 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.25s both;
 
-            @include mixins.xl {
-                flex-direction: column;
-                margin: 20px;
-            }
-
             .nameplate {
                 background-color: $gray-50;
                 padding: 40px;
@@ -45,11 +40,6 @@ body.index {
                 gap: 50px;
 
                 position: relative;
-
-                @include mixins.xl {
-                    width: initial;
-                    padding: 20px;
-                }
 
                 .profile-picture {
                     .wrapper {
@@ -125,10 +115,6 @@ body.index {
                 flex-direction: column;
                 justify-content: center;
 
-                @include mixins.xl {
-                    display: none;
-                }
-
                 strong { font-weight: 600; }
 
                 .title { font-weight: 600; }
@@ -160,6 +146,22 @@ body.index {
             bottom: 16px;
             left: 16px;
             font-size: small;
+        }
+
+        @include max-screen('xl') {
+            .container {
+                flex-direction: column;
+                margin: 60px 20px;
+
+                .nameplate {
+                    width: initial;
+                    padding: 20px;
+                }
+
+                .terminal {
+                    display: none;
+                }
+            }
         }
     }
 }
